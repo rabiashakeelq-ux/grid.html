@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: #0f1115;
+    color: #e8e8e8;
+    padding: 24px 16px 60px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #9ca3af;
+    margin-bottom: 32px;
+    font-size: 0.9rem;
+}
+
+.section-label {
+    max-width: 900px;
+    margin: 40px auto 12px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #4ade80;
+}
+
+/* ============ FLEXBOX VERSION ============ */
+.pricing-flex {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid #2a2d35;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.pricing-flex .header,
+.pricing-flex .footer {
+    background: #1a1d24;
+    padding: 16px 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.pricing-flex .footer {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-row .plan {
+    flex: 1 1 0;
+    min-width: 220px;
+    padding: 24px 20px;
+    border-right: 1px solid #2a2d35;
+}
+
+.flex-row .plan:last-child {
+    border-right: none;
+}
+
+/* ============ GRID VERSION ============ */
+.pricing-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid #2a2d35;
+    border-radius: 12px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+}
+
+.pricing-grid .header,
+.pricing-grid .footer {
+    background: #1a1d24;
+    padding: 16px 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.pricing-grid .footer {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.grid-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-row .plan {
+    padding: 24px 20px;
+    border-right: 1px solid #2a2d35;
+}
+
+.grid-row .plan:last-child {
+    border-right: none;
+}
+
+/* shared plan styles */
+.plan h3 {
+    color: #4ade80;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.plan .price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.plan .price span {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.plan ul {
+    list-style: none;
+}
+
+.plan li {
+    padding: 6px 0;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+}
+
+.plan.featured {
+    background: #171b22;
+}
+
+/* ============ RESPONSIVE: stack below 600px ============ */
+@media (max-width: 600px) {
+    .flex-row {
+        flex-direction: column;
+    }
+
+    .flex-row .plan {
+        border-right: none;
+        border-bottom: 1px solid #2a2d35;
+    }
+
+    .flex-row .plan:last-child {
+        border-bottom: none;
+    }
+
+    .grid-row {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-row .plan {
+        border-right: none;
+        border-bottom: 1px solid #2a2d35;
+    }
+
+    .grid-row .plan:last-child {
+        border-bottom: none;
+    }
+}
